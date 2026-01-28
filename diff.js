@@ -229,6 +229,10 @@ window.onload = function() {
                     rightUrlHtml = compareUrlHtml;
                 }
 
+                //Pretty print the HTML before comparison
+                leftUrlHtml = prettyPrintHtml(leftUrlHtml);
+                rightUrlHtml = prettyPrintHtml(rightUrlHtml);
+
                 //windowサイズを取得する
                 //console.log($(window).width());
 
@@ -330,6 +334,109 @@ function countdown(num) {
         }
         i++;
     }, 1000);
+}
+
+
+function prettyPrintHtml(html) {
+    if (!html || typeof html !== 'string') {
+        return html;
+    }
+    
+    var formatted = '';
+    var indent = 0;
+    var indentStr = '  '; // 2 spaces for indentation
+    
+    // Remove existing indentation and extra whitespace
+    html = html.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    
+    // Split by tags while preserving them
+    var tokens = html.split(/(<[^>]+>)/g).filter(function(token) {
+        return token.trim() !== '';
+    });
+    
+    // Tags that should not have line breaks before content
+    var inlineTags = ['a', 'span', 'strong', 'em', 'b', 'i', 'u', 'small', 'code', 'label', 'abbr', 'cite'];
+    
+    // Self-closing tags
+    var selfClosingTags = ['br', 'hr', 'img', 'input', 'link', 'meta', 'area', 'base', 'col', 'command', 'embed', 'keygen', 'param', 'source', 'track', 'wbr'];
+    
+    // Tags that preserve whitespace
+    var preserveWhitespaceTags = ['pre', 'script', 'style', 'textarea'];
+    
+    var inPreserveTag = false;
+    var preserveTagName = '';
+    var previousWasTag = false;
+    
+    for (var i = 0; i < tokens.length; i++) {
+        var token = tokens[i];
+        
+        // Check if this is a tag
+        if (token.match(/^<[^>]+>$/)) {
+            var isClosingTag = token.match(/^<\//);
+            var tagName = token.replace(/^<\/?/, '').replace(/\/?>.*$/, '').split(/\s/)[0].toLowerCase();
+            var isSelfClosing = selfClosingTags.indexOf(tagName) > -1 || token.match(/\/>$/);
+            var isInline = inlineTags.indexOf(tagName) > -1;
+            var isPreserve = preserveWhitespaceTags.indexOf(tagName) > -1;
+            
+            // Handle preserve whitespace tags
+            if (!isClosingTag && isPreserve) {
+                inPreserveTag = true;
+                preserveTagName = tagName;
+            }
+            
+            if (inPreserveTag && isClosingTag && tagName === preserveTagName) {
+                formatted += token;
+                inPreserveTag = false;
+                preserveTagName = '';
+                previousWasTag = true;
+                continue;
+            }
+            
+            if (inPreserveTag) {
+                formatted += token;
+                previousWasTag = true;
+                continue;
+            }
+            
+            // Decrease indent for closing tags (except inline tags)
+            if (isClosingTag && !isInline) {
+                indent = Math.max(0, indent - 1);
+            }
+            
+            // Add newline and indentation
+            if (!isInline && (isClosingTag || !previousWasTag)) {
+                formatted += '\n' + Array(indent + 1).join(indentStr);
+            }
+            
+            formatted += token;
+            
+            // Increase indent for opening tags (except inline and self-closing)
+            if (!isClosingTag && !isSelfClosing && !isInline) {
+                indent++;
+            }
+            
+            previousWasTag = true;
+        } else {
+            // This is text content
+            if (inPreserveTag) {
+                formatted += token;
+            } else {
+                var trimmedToken = token.trim();
+                if (trimmedToken !== '') {
+                    if (!previousWasTag) {
+                        formatted += '\n' + Array(indent + 1).join(indentStr);
+                    }
+                    formatted += trimmedToken;
+                    previousWasTag = false;
+                }
+            }
+        }
+    }
+    
+    // Clean up extra blank lines
+    formatted = formatted.replace(/\n\s*\n\s*\n/g, '\n\n');
+    
+    return formatted.trim();
 }
 
 
