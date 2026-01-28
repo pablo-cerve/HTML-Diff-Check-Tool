@@ -1,0 +1,236 @@
+html {
+    height: 90px;
+}
+
+body {
+    width: 400px;
+    min-height: 550px;
+    font-size: 12px;
+    color: #555;
+    font-family: Helvetica, Arial, Verdana, Roboto, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-weight: normal;
+    margin: 5px 2px;
+}
+
+h2 {
+    text-align: left;
+    border-bottom: 1px dotted #D14042;
+    font-size: 14px;
+    padding-left: 5px;
+    font-weight: normal;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+
+a {
+    color: #0867BF;
+    text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #1E85E5;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.clear {
+    clear: both;
+}
+
+input {
+    font-family: Helvetica, Arial, Verdana, Roboto, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+.popupButton {
+    cursor: pointer;
+    margin: 4px 20px;
+    font-size: 16px;
+    width: 100px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.popupButton:hover {
+    background-color: #eee;
+}
+
+#openSiteButton {}
+
+#diffSiteButton {
+    float: right;
+}
+
+#main {
+    margin: 5px;
+    text-align: center;
+}
+
+#regularDiv {
+    text-align: center;
+    width: 300px;
+    margin: auto auto 20px;
+    font-size: 14px;
+}
+
+#envTitle {
+    margin: 10px auto 5px auto;
+    padding: 5px 0px;
+}
+
+.tabDiv {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    margin: 10px 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.tabDiv:hover {
+    background-color: #eee;
+}
+
+.tabTitleDiv {
+    font-size: 12px;
+    height: 20px;
+    width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tabImgDiv {
+    float: left;
+}
+
+.tabTitleDiv img {
+    width: 16px;
+    margin-top: 2px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.tabUrlDiv {
+    font-size: 8px;
+    margin: 3px 5px;
+    padding-left: 5px;
+    height: 12px;
+    width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #2B7898;
+}
+
+
+#openConfigNote {
+    font-size: 11px;
+    margin: 5px;
+}
+
+#openOptionsLink {
+    cursor: pointer;
+    margin: 10px auto 15px;
+    height: 16px;
+    width: 100px;
+    padding-bottom: 6px;
+    font-size: 12px;
+}
+
+#openOptionsLinkText {
+    margin-left: 5px;
+}
+
+#openOptionsNote {
+    font-size: 12px;
+    margin: 8px 5px 5px;
+}
+
+#openStoreLink {
+    cursor: pointer;
+}
+
+#openStore {
+    font-size: 10px;
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+#openStore a {
+    color: #aaa;
+}
+
+#openStore a:hover {
+    text-decoration: none;
+    color: #666;
+}
+
+.unsupported {
+    height: 400px;
+    padding-top: 100px;
+    color: #D14042;
+}
+
+#h2-promo .fab{
+    color: green;
+}
+
+
+
+#promo-close{
+    cursor: pointer;
+    font-size: 4px;
+    color: #aaa;
+    float: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #777;
+}
+
+#promo-close:hover {
+    text-decoration: none;
+    color: #666;
+}
+
+.promoDiv{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    margin: 10px 10px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #e8ffd1;
+}
+
+.promoDiv:hover {
+    background-color: #d1ffd1;
+}
+
+.promoDescDiv{
+    font-size: 10px;
+    margin: 3px 5px;
+    padding-left: 5px;
+    height: 12px;
+    width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

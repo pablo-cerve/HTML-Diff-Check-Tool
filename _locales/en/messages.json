@@ -1,0 +1,155 @@
+{
+   "contextMenu_errorNotRegistered": {
+      "message": "This domain is not registered.\n Regist it in options."
+   },
+   "contextMenu_title": {
+      "message": "HTML Diff Check"
+   },
+   "diff_alert_cannnotAccessCompareUrl": {
+      "message": "Could not access to target url"
+   },
+   "diff_annotation1": {
+      "message": "You can replace strings in development environment which are unnecessary strings for extracting diff, like host name of file server. ex)  http://img-cdn.development.com -> http://img-cdn.production.com"
+   },
+   "diff_annotation2_1": {
+      "message": "You can change options of replace string pairs and JavaScript rendered HTML from"
+   },
+   "diff_annotation2_2": {
+      "message": "here"
+   },
+   "diff_annotation2_3": {
+      "message": "."
+   },
+   "diff_currentTab": {
+      "message": "Current Tab HTML"
+   },
+   "diff_development": {
+      "message": "Development HTML"
+   },
+   "diff_mergely1_1": {
+      "message": "*Diff function is using library of"
+   },
+   "diff_mergely1_2": {
+      "message": "(not changed)."
+   },
+   "diff_otherTab": {
+      "message": "Other Tab HTML"
+   },
+   "diff_production": {
+      "message": "Production HTML"
+   },
+   "extDescription": {
+      "message": "Tool for checking HTML difference between tabs ,or between production and development environment."
+   },
+   "extName": {
+      "message": "HTML Diff Check Tool"
+   },
+   "extNameShort": {
+      "message": "HTML Diff Check Tool"
+   },
+   "openContactLink": {
+      "message": "Comment Box"
+   },
+   "options_ButtonClose": {
+      "message": "Close"
+   },
+   "options_ButtonRegist": {
+      "message": "Regist"
+   },
+   "options_DNPOption": {
+      "message": "Domain name pairs option"
+   },
+   "options_DNPOptionAnnotation": {
+      "message": "Input domain name pair of production and development which is separated with comma.\u003Cbr>Domain name should include sub-domain. Pairs shoud be line-byline.\u003Cbr>ex) http://production.com,http://development.com"
+   },
+   "options_Other": {
+      "message": "Other option"
+   },
+   "options_OtherJSRengerAnnotation": {
+      "message": "Compare HTML include JavaScript rendered HTML"
+   },
+   "options_OtherJSRengerWaitTimeAnnotation": {
+      "message": "Waiting time for JavaScript rendering before get HTML"
+   },
+   "options_OtherJSRengerWaitTimeUnit": {
+      "message": "sec"
+   },
+   "options_RSPOption": {
+      "message": "Replace string pairs option"
+   },
+   "options_RSPOptionAnnotation": {
+      "message": "Input replace string pair separated with comma. Which are unnecessary string for extracting diff and string after replaced, ex) host name of file server.\u003Cbr>If string exists in development HTML, they would be replaced with strings of production you regist\u003Cbr>Pairs shoud be line-byline.\u003Cbr>ex) //img-cdn.production.com,//img-cdn.development.com"
+   },
+   "options_confirm": {
+      "message": "Registered.\nClose options?"
+   },
+   "options_errorEmptyLineInDNP": {
+      "message": "Exclude empty line from domain name pairs."
+   },
+   "options_errorEmptyLineInRSP": {
+      "message": "Exclude empty line from replace string pairs."
+   },
+   "options_errorMultipleCommaInDNP": {
+      "message": "Exclude multiple commas from domain name pairs."
+   },
+   "options_errorMultipleCommaInRSP": {
+      "message": "Exclude multiple commas from replacing string pairs."
+   },
+   "options_errorNoCommaInDNP": {
+      "message": "Separate domain name pairs with a comma."
+   },
+   "options_errorNoCommaInRSP": {
+      "message": "Separate replace string pairs with a comma."
+   },
+   "options_errorNoProtocolInDNP": {
+      "message": "Include http(s):// in domain name."
+   },
+   "popup_compareWithDev": {
+      "message": "Check Development"
+   },
+   "popup_compareWithPro": {
+      "message": "Check Production"
+   },
+   "popup_doReload": {
+      "message": "Reload page."
+   },
+   "popup_error": {
+      "message": "Error"
+   },
+   "popup_errorDiff": {
+      "message": "Can not get diff with"
+   },
+   "popup_errorNotRegistered": {
+      "message": "This domain is\u003CBR>not registered.\u003CBR>Regist it in options."
+   },
+   "popup_header1": {
+      "message": "Diff between Pro and Dev"
+   },
+   "popup_header2": {
+      "message": "Diff with Other Tab"
+   },
+   "popup_headerPromo": {
+      "message": "-"
+   },
+   "popup_headerPromo_close": {
+      "message": "-"
+   },
+   "popup_notSupported": {
+      "message": "This page is not supported."
+   },
+   "popup_options": {
+      "message": "options"
+   },
+   "popup_promo_desc1": {
+      "message": "-"
+   },
+   "popup_promo_desc2": {
+      "message": "-"
+   },
+   "popup_promo_title": {
+      "message": "-"
+   },
+   "popup_tryOtherPage": {
+      "message": "Try it on other pages."
+   }
+}

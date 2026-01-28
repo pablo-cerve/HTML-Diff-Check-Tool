@@ -1,0 +1,155 @@
+{
+   "contextMenu_errorNotRegistered": {
+      "message": "このドメインは未登録です。\nオプション画面で商用環境と開発環境のドメインを登録してください。"
+   },
+   "contextMenu_title": {
+      "message": "HTML差分チェック"
+   },
+   "diff_alert_cannnotAccessCompareUrl": {
+      "message": "比較対象のURLにアクセスできません"
+   },
+   "diff_annotation1": {
+      "message": "ファイルサーバーのURLなど差分として検出してほしくない文字列は、開発環境のHTML内で置換することができます。 （例: http://img-cdn.development.com ⇒ http://img-cdn.production.com ）"
+   },
+   "diff_annotation2_1": {
+      "message": "置換文字列の組み合わせや、JavaScriptによって描画されるHTMLについては、"
+   },
+   "diff_annotation2_2": {
+      "message": "こちら"
+   },
+   "diff_annotation2_3": {
+      "message": "から設定してください。"
+   },
+   "diff_currentTab": {
+      "message": "現在のタブのHTML"
+   },
+   "diff_development": {
+      "message": "開発環境 HTML"
+   },
+   "diff_mergely1_1": {
+      "message": "※差分表示には"
+   },
+   "diff_mergely1_2": {
+      "message": "を利用しています（改変は加えていません）"
+   },
+   "diff_otherTab": {
+      "message": "別のタブのHTML"
+   },
+   "diff_production": {
+      "message": "商用環境 HTML"
+   },
+   "extDescription": {
+      "message": "HTMLの差分(diff)をチェックするChrome拡張機能です。タブと別タブの差分、商用環境と開発環境の差分がSide by Sideのインターフェースで一目で見ることができます。"
+   },
+   "extName": {
+      "message": "HTML差分(diff)チェックツール"
+   },
+   "extNameShort": {
+      "message": "HTML差分チェックツール"
+   },
+   "openContactLink": {
+      "message": "ご意見・ご要望はこちらからどうぞ"
+   },
+   "options_ButtonClose": {
+      "message": "閉じる"
+   },
+   "options_ButtonRegist": {
+      "message": "登録する"
+   },
+   "options_DNPOption": {
+      "message": "ドメイン名の組み合わせ設定"
+   },
+   "options_DNPOptionAnnotation": {
+      "message": "商用環境と開発環境のドメイン名(サブドメイン含む)の組み合わせをカンマ区切りで入力してください。\u003Cbr>組み合わせごとに改行してください。\u003Cbr>例) http://production.com,http://development.com"
+   },
+   "options_Other": {
+      "message": "その他の設定"
+   },
+   "options_OtherJSRengerAnnotation": {
+      "message": "JavaScriptによって表示されたHTMLソースも比較する"
+   },
+   "options_OtherJSRengerWaitTimeAnnotation": {
+      "message": "JavaScriptによる表示が完了するのを待つ時間"
+   },
+   "options_OtherJSRengerWaitTimeUnit": {
+      "message": "秒"
+   },
+   "options_RSPOption": {
+      "message": "置換文字列の組み合わせ設定"
+   },
+   "options_RSPOptionAnnotation": {
+      "message": "HTMLの差分を見るときに、差分として検出する必要のない文字列（開発環境）と置換後の文字列（商用環境）の組み合わせをカンマ区切りで入力してください。\u003Cbr>例えばファイルサーバーのURLなどです。開発環境のソース内に指定された文字列がある場合は、商用環境の文字列に置換します。\u003Cbr>組み合わせごとに改行してください。\u003Cbr>例) //img-cdn.production.com,//img-cdn.development.com"
+   },
+   "options_confirm": {
+      "message": "登録しました。\n設定画面を閉じますか？"
+   },
+   "options_errorEmptyLineInDNP": {
+      "message": "ドメイン名の組み合わせに空行が入っています。削除してください。"
+   },
+   "options_errorEmptyLineInRSP": {
+      "message": "置換文字列の組み合わせに空行が入っています。削除してください。"
+   },
+   "options_errorMultipleCommaInDNP": {
+      "message": "ドメイン名の組み合わせにカンマが複数入っています。削除してください。"
+   },
+   "options_errorMultipleCommaInRSP": {
+      "message": "置換文字列の組み合わせにカンマが複数入っています。削除してください。"
+   },
+   "options_errorNoCommaInDNP": {
+      "message": "ドメイン名の組み合わせはカンマで区切ってください。"
+   },
+   "options_errorNoCommaInRSP": {
+      "message": "置換文字列の組み合わせはカンマで区切ってください。"
+   },
+   "options_errorNoProtocolInDNP": {
+      "message": "ドメイン名は、http(s):// から入力してください。"
+   },
+   "popup_compareWithDev": {
+      "message": "開発環境と比べる"
+   },
+   "popup_compareWithPro": {
+      "message": "商用環境と比べる"
+   },
+   "popup_doReload": {
+      "message": "ページをリロードしてください"
+   },
+   "popup_error": {
+      "message": "エラー"
+   },
+   "popup_errorDiff": {
+      "message": "こちらのURLとは差分が出せません → "
+   },
+   "popup_errorNotRegistered": {
+      "message": "このドメインは\u003CBR>未登録です。\u003CBR>設定から登録できます。"
+   },
+   "popup_header1": {
+      "message": "商用環境と開発環境のHTML差分"
+   },
+   "popup_header2": {
+      "message": "他のタブとのHTML差分"
+   },
+   "popup_headerPromo": {
+      "message": "【新作】便利な拡張機能の紹介"
+   },
+   "popup_headerPromo_close": {
+      "message": "表示しない"
+   },
+   "popup_notSupported": {
+      "message": "このページは対応していません"
+   },
+   "popup_options": {
+      "message": "設定"
+   },
+   "popup_promo_desc1": {
+      "message": "「して下さい」と「してください」や「お申し込み」と「お申込」など！"
+   },
+   "popup_promo_desc2": {
+      "message": "プリセット正誤表あり。もちろん自分用のカスタマイズ設定も可能です。"
+   },
+   "popup_promo_title": {
+      "message": "1clickで文言の「表記ゆれ」をチェックする拡張機能"
+   },
+   "popup_tryOtherPage": {
+      "message": "別のページで試してください"
+   }
+}

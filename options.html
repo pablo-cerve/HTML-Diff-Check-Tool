@@ -1,0 +1,73 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>options</title>
+	<script type='text/javascript' src='jquery-2.1.4.min.js'></script>
+	<script type='text/javascript' src='async.js'></script>
+	<script type='text/javascript' src='options.js'></script>
+
+	<!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="pdca.css" />
+</head>
+<body>
+<div id="container">
+		<h1></h1>
+
+		<form name="mainForm" id="optionMainForm">
+
+		<h2 id="options_DNPOption"></h2>
+		<div id="options_DNPOptionAnnotation" class="optionPairsAnnotation"></div>
+		<div>
+			<textarea name="domainPairs" id="domainPairs" cols="120" rows="6"></textarea>
+		</div>
+
+		<h2 id="options_RSPOption"></h2>
+		<div id="options_RSPOptionAnnotation" class="optionPairsAnnotation"></div>
+		<div>
+			<textarea name="replaceStringPairs" id="replaceStringPairs" cols="120" rows="6"></textarea>
+		</div>
+
+
+		<h2 id="options_Other">その他の設定</h2>
+		<div>
+			<input id="options_OtherJSRenger" type="checkbox" name="otherJSRender" value="0"><span id="options_OtherJSRengerAnnotation" class="options_OtherCheckBox">JavaScriptによって表示されたHTMLソースも比較する</span>
+
+			<div id="options_OtherJSRengerWaitTime">
+			<div id="options_OtherJSRengerWaitTimeAnnotation">JavaScriptによる表示が完了するのを待つ時間</div>
+			<SELECT id="otherJSRenderWaitTimeSelect" name="otherJSRenderWaitTimeSelect">
+				<OPTION id="otherJSRenderWaitSec1" name="otherJSRenderWaitSec1" value="1">1</OPTION>
+				<OPTION id="otherJSRenderWaitSec2" name="otherJSRenderWaitSec2" value="2">2</OPTION>
+				<OPTION id="otherJSRenderWaitSec3" name="otherJSRenderWaitSec3" value="3">3</OPTION>
+				<OPTION id="otherJSRenderWaitSec4" name="otherJSRenderWaitSec4" value="4">4</OPTION>
+				<OPTION id="otherJSRenderWaitSec5" name="otherJSRenderWaitSec5" value="5">5</OPTION>
+				<OPTION id="otherJSRenderWaitSec6" name="otherJSRenderWaitSec6" value="6">6</OPTION>
+				<OPTION id="otherJSRenderWaitSec7" name="otherJSRenderWaitSec7" value="7">7</OPTION>
+				<OPTION id="otherJSRenderWaitSec8" name="otherJSRenderWaitSec8" value="8">8</OPTION>
+				<OPTION id="otherJSRenderWaitSec9" name="otherJSRenderWaitSec9" value="9">9</OPTION>
+				<OPTION id="otherJSRenderWaitSec10" name="otherJSRenderWaitSec10" value="10">10</span></OPTION>
+			</SELECT><span id="options_OtherJSRengerWaitTimeUnit"></span>
+			</div>
+		</div>
+
+		<h2 id="options_ShortCutKey">Short Cut Key</h2>
+		<div>alt + Down (Go to next Diff)  /  alt + Up (Go to prev Diff)  /  alt + w (change wrap lines)</div>
+
+
+
+		<div id="optionButton">
+		<input type="button" value="" id="closeOptionsButton"/>
+		<input type="button" value="" id="registOptionsButton"/>
+		</div>
+	
+		</form>
+		<div id="footerNote">
+		<hr>
+		<a id="openContactLink" href="https://docs.google.com/forms/d/e/1FAIpQLSe-Hr1Q_TLBw8Im6N1iKvsoUAo1nEPUsgXC4PsQXDbdhfOt-w/viewform?usp=sf_link" target="_blank"></a><br>
+		<a id="openStoreLink" href="https://chromewebstore.google.com/detail/fjbonpakihikkocmockbkndhooihpijo"  target="_blank">HTML Diff Check Tool</a>
+		</div>
+</div><!-- container end-->
+</body>
+</html>

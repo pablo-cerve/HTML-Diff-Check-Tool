@@ -1,0 +1,96 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>diff</title>
+	<style>body{width:130px;height:20px;}</style>
+	<script type='text/javascript' src='common.js'></script>
+	<script type='text/javascript' src='common2.js'></script>
+	<script type='text/javascript' src='jquery-2.1.4.min.js'></script>
+
+	<!-- Requires CodeMirror -->
+	<script type="text/javascript" src="/lib/codemirror.js"></script>
+	<link type="text/css" rel="stylesheet" href="/lib/codemirror.css" />
+	<!-- Requires Mergely -->
+	<script type="text/javascript" src="/lib/mergely.js"></script>
+	<link type="text/css" rel="stylesheet" href="/lib/mergely.css" />
+	<script type="text/javascript" src="/lib/searchcursor.js"></script>
+
+	<script type='text/javascript' src='async.js'></script>
+	<script type='text/javascript' src='diff.js'></script>
+
+	<!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="pdca.css" />
+
+</head>
+
+<body>
+<div id="container">
+	<div id="annotation">
+		<ul>
+		<li id="diff_annotation1"></li>
+		<li><span id="diff_annotation2_1"></span> <a id="openOptionsLink"></a> <span id="diff_annotation2_3"></span></li>
+	</ul>
+	</div>
+	<div id="preloaderContainer"><img src="preloader.gif" id="preloader"></div>
+	<div id="JSRenderWaiting">Just wait for <span id="JSRenderWaitingSec"></span></div>
+	<div id="htmlLeftTitle">
+		<div class="htmlTitleTopRow">
+			<span id="htmlLeftTitleStr"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> <span id="diff_production"></span></span>  | 
+			<span class="htmlUrlVS"><a id="openLeftUrlVS">view-source</a></span>
+
+			<div class="operationPanel">
+				<div class="moveButton wrapLine" id="wrapLineL" title="Wrap Line (alt+w)"><span class="glyphicon glyphicon glyphicon-indent-right" aria-hidden="true"></span></div>				
+				<div class="moveButton" id="prevDiffL" title="Prev Diff (alt+Up)"><span class="glyphicon glyphicon glyphicon-upload" aria-hidden="true"></span></div>
+				<div class="moveButton" id="nextDiffL" title="Next Diff (alt+Down)"><span class="glyphicon glyphicon glyphicon-download" aria-hidden="true"></span></div>				
+				<div class="searchBox">
+					<div class="searchBoxIcon"><span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span></div>
+					<input type="text" class="searchBoxText" id="searchBoxTextL" size="20">
+					<div class="searchButton" id="prevSearchResultL"><span class="glyphicon glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div>
+					<div class="searchButton" id="nextSearchResultL"><span class="glyphicon glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+					<div class="searchButton" id="removeSearchTextL"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span></div>
+				</div>
+			</div>
+
+		</div>
+		<div id="htmlLeftTitleUrl" class="htmlUrl"><a id="openLeftUrl"></a></div>
+	</div>
+	<div id="htmlRightTitle">
+		<div class="htmlTitleTopRow">
+			<span id="htmlRightTitleStr"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> <span id="diff_development"></span></span> | 
+			<span class="htmlUrlVS"><a id="openRightUrlVS">view-source</a></span>
+
+			<div class="operationPanel">
+				<div class="moveButton wrapLine" id="wrapLineR" title="Wrap Line (alt+w)"><span class="glyphicon glyphicon glyphicon-indent-right" aria-hidden="true"></span></div>		
+				<div class="moveButton" id="prevDiffR" title="Prev Diff (alt+Up)"><span class="glyphicon glyphicon glyphicon-upload" aria-hidden="true"></span></div>
+				<div class="moveButton" id="nextDiffR" title="Next Diff (alt+Down)"><span class="glyphicon glyphicon glyphicon-download" aria-hidden="true"></span></div>				
+				<div class="searchBox">
+					<div class="searchBoxIcon"><span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span></div>
+					<input type="text" class="searchBoxText" id="searchBoxTextR" size="20">
+					<div class="searchButton" id="prevSearchResultR"><span class="glyphicon glyphicon glyphicon-chevron-up" aria-hidden="true"></span></div>
+					<div class="searchButton" id="nextSearchResultR"><span class="glyphicon glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+					<div class="searchButton" id="removeSearchTextR"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span></div>
+				</div>
+			</div>
+		</div>
+
+		<div id="htmlRightTitleUrl" class="htmlUrl"><a id="openRightUrl"></a></div> 
+	</div>
+	<div class="clear"></div>
+
+	<div id="mergely-resizer">
+		<div id="compare">
+		</div>
+	</div>
+
+	<div id="footerNote">
+		<hr>
+		<a id="openContactLink"></a><br>
+		<a id="openStoreLink">HTML Diff Check Tool</a>
+		<div id="aboutMergely"><span id="diff_mergely1_1"></span> <a id="openMergelyLink">mergely</a> <span id="diff_mergely1_2"></span></div>
+	</div>
+</div><!-- container end-->
+</body>
+</html>
