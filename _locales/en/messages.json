@@ -80,6 +80,12 @@
    "options_RSPOptionAnnotation": {
       "message": "Input replace string pair separated with comma. Which are unnecessary string for extracting diff and string after replaced, ex) host name of file server.\u003Cbr>If string exists in development HTML, they would be replaced with strings of production you regist\u003Cbr>Pairs shoud be line-byline.\u003Cbr>ex) //img-cdn.production.com,//img-cdn.development.com"
    },
+   "options_FilterOption": {
+      "message": "Filter lines option"
+   },
+   "options_FilterOptionAnnotation": {
+      "message": "If a string is provided, only lines containing this string will be included in the diff comparison. Leave empty to compare all lines."
+   },
    "options_confirm": {
       "message": "Registered.\nClose options?"
    },

@@ -2,14 +2,16 @@ window.onload = function() {
 	async.series([
 
 			function(callback) {
-				//国別の文字列を入れる
-				$("h1").html(chrome.i18n.getMessage("extNameShort"));
-				$("#options_DNPOption").html(chrome.i18n.getMessage("options_DNPOption"));
-				$("#options_DNPOptionAnnotation").html(chrome.i18n.getMessage("options_DNPOptionAnnotation"));
-				$("#options_RSPOption").html(chrome.i18n.getMessage("options_RSPOption"));
-				$("#options_RSPOptionAnnotation").html(chrome.i18n.getMessage("options_RSPOptionAnnotation"));
+			//国別の文字列を入れる
+			$("h1").html(chrome.i18n.getMessage("extNameShort"));
+			$("#options_DNPOption").html(chrome.i18n.getMessage("options_DNPOption"));
+			$("#options_DNPOptionAnnotation").html(chrome.i18n.getMessage("options_DNPOptionAnnotation"));
+			$("#options_RSPOption").html(chrome.i18n.getMessage("options_RSPOption"));
+			$("#options_RSPOptionAnnotation").html(chrome.i18n.getMessage("options_RSPOptionAnnotation"));
+			$("#options_FilterOption").html(chrome.i18n.getMessage("options_FilterOption"));
+			$("#options_FilterOptionAnnotation").html(chrome.i18n.getMessage("options_FilterOptionAnnotation"));
 
-				$("#options_Other").html(chrome.i18n.getMessage("options_Other"));
+			$("#options_Other").html(chrome.i18n.getMessage("options_Other"));
 				$("#options_OtherJSRengerAnnotation").html(chrome.i18n.getMessage("options_OtherJSRengerAnnotation"));
 				$("#options_OtherJSRengerWaitTimeAnnotation").html(chrome.i18n.getMessage("options_OtherJSRengerWaitTimeAnnotation"));
 
@@ -23,35 +25,39 @@ window.onload = function() {
 			},
 
 
-			//chrome.storage.syncに入ってたら、それを設定する
-			function(callback) {
+		//chrome.storage.syncに入ってたら、それを設定する
+		function(callback) {
 
-				chrome.storage.sync.get(["domainPairs", "replaceStringPairs", "otherJSRender", "otherJSRenderWaitTime"], function(value) {
-					//console.log(value);
-					if (value.domainPairs) {
-						$("#domainPairs").text(value.domainPairs);
-					}
+			chrome.storage.sync.get(["domainPairs", "replaceStringPairs", "filterString", "otherJSRender", "otherJSRenderWaitTime"], function(value) {
+				//console.log(value);
+				if (value.domainPairs) {
+					$("#domainPairs").text(value.domainPairs);
+				}
 
-					if (value.replaceStringPairs) {
-						$("#replaceStringPairs").text(value.replaceStringPairs);
-					}
+				if (value.replaceStringPairs) {
+					$("#replaceStringPairs").text(value.replaceStringPairs);
+				}
 
-					//console.log(localStorage["otherJSrender"]);
-					if (value.otherJSRender === true) {
-						$("#options_OtherJSRenger").attr("checked", "true");
-						$("#options_OtherJSRengerWaitTime").show();
-					} else {
-						$("#options_OtherJSRengerWaitTime").hide();
-					}
+				if (value.filterString) {
+					$("#filterString").val(value.filterString);
+				}
 
-					if (value.otherJSRenderWaitTime) {
-						$("#otherJSRenderWaitSec" + value.otherJSRenderWaitTime).attr("selected", "true");
-					} else {
-						$("#otherJSRenderWaitSec3").attr("selected", "true");
-					}
-					callback();
-				});
-			}
+				//console.log(localStorage["otherJSrender"]);
+				if (value.otherJSRender === true) {
+					$("#options_OtherJSRenger").attr("checked", "true");
+					$("#options_OtherJSRengerWaitTime").show();
+				} else {
+					$("#options_OtherJSRengerWaitTime").hide();
+				}
+
+				if (value.otherJSRenderWaitTime) {
+					$("#otherJSRenderWaitSec" + value.otherJSRenderWaitTime).attr("selected", "true");
+				} else {
+					$("#otherJSRenderWaitSec3").attr("selected", "true");
+				}
+				callback();
+			});
+		}
 		],
 		function(err, results) {
 			if (err) {
@@ -202,29 +208,32 @@ function registOptions() {
 			},
 
 
-			//localStorageに入れるのをやめて
-			//chrome.storageに入れる
-			function(callback) {
-				if (errorMessageArray.length === 0) {
+		//localStorageに入れるのをやめて
+		//chrome.storageに入れる
+		function(callback) {
+			if (errorMessageArray.length === 0) {
 
-					chrome.storage.sync.set({
-						'domainPairs': domainPairsArray.join("\n")
-					});
-					chrome.storage.sync.set({
-						'replaceStringPairs': replaceStringPairsArray.join("\n")
-					});
-					chrome.storage.sync.set({
-						'otherJSRender': document.forms.mainForm.otherJSRender.checked
-					});
-					chrome.storage.sync.set({
-						'otherJSRenderWaitTime': document.forms.mainForm.otherJSRenderWaitTimeSelect.selectedIndex + 1
-					});
-					
-					callback();
-				} else {
-					callback('e');
-				}
+				chrome.storage.sync.set({
+					'domainPairs': domainPairsArray.join("\n")
+				});
+				chrome.storage.sync.set({
+					'replaceStringPairs': replaceStringPairsArray.join("\n")
+				});
+				chrome.storage.sync.set({
+					'filterString': document.forms.mainForm.filterString.value.trim()
+				});
+				chrome.storage.sync.set({
+					'otherJSRender': document.forms.mainForm.otherJSRender.checked
+				});
+				chrome.storage.sync.set({
+					'otherJSRenderWaitTime': document.forms.mainForm.otherJSRenderWaitTimeSelect.selectedIndex + 1
+				});
+				
+				callback();
+			} else {
+				callback('e');
 			}
+		}
 		],
 		function(err, results) {
 			if (err) {

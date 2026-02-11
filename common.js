@@ -1,6 +1,7 @@
 var configJson = {
     "domainPairs": [],
     "replaceStrPairs": [],
+    "filterString": "",
     "jsRender": false
 };
 var thisTab;
@@ -21,10 +22,11 @@ var unregisteredUrlFlg = false;
 
 function getConfigJson(callback) {
     var response;
-    chrome.storage.sync.get(["domainPairs", "replaceStringPairs", "otherJSRender", "otherJSRenderWaitTime"], function(value) {
+    chrome.storage.sync.get(["domainPairs", "replaceStringPairs", "filterString", "otherJSRender", "otherJSRenderWaitTime"], function(value) {
         response = {
             "domainPairsOption": value.domainPairs,
             "replaceStringPairsOption": value.replaceStringPairs,
+            "filterStringOption": value.filterString,
             "otherOptionJSRender": value.otherJSRender,
             "otherOptionJSRenderWaitTime": value.otherJSRenderWaitTime
         };
@@ -55,18 +57,20 @@ function getConfigJson(callback) {
         //console.log("replaceStringPairsOptionArray = " + replaceStringPairsOptionArray);
         for (var x = 0; x < replaceStringPairsOptionArray.length; x++) {
             var replaceStringPairArray = replaceStringPairsOptionArray[x].split(',');
-            configJson.replaceStrPairs.push({
-                "production": replaceStringPairArray[0],
-                "development": replaceStringPairArray[1]
-            });
-        }
+        configJson.replaceStrPairs.push({
+            "production": replaceStringPairArray[0],
+            "development": replaceStringPairArray[1]
+        });
+    }
 
-        configJson.jsRender = response.otherOptionJSRender;
-        configJson.jsRenderWaitTime = response.otherOptionJSRenderWaitTime;
-        //console.log(configJson.jsRender);
+    configJson.filterString = response.filterStringOption || "";
 
-        callback();
-    });
+    configJson.jsRender = response.otherOptionJSRender;
+    configJson.jsRenderWaitTime = response.otherOptionJSRenderWaitTime;
+    //console.log(configJson.jsRender);
+
+    callback();
+});
 }
 
 function getTabObj(callback) {

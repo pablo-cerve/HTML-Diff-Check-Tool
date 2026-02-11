@@ -214,24 +214,30 @@ window.onload = function() {
                 callback();
             },
 
-            function(callback) {
+        function(callback) {
 
-                //左にはいつでも本番環境を、右にはいつでも開発環境を入れる
-                //別タブとの比較の場合は、左が現在、右が別タブ
-                if (compareDataJson.currentEnvFlg == "production") {
-                    leftUrlHtml = currentUrlHtml;
-                    rightUrlHtml = compareUrlHtml;
-                } else if (compareDataJson.currentEnvFlg == "development") {
-                    leftUrlHtml = compareUrlHtml;
-                    rightUrlHtml = currentUrlHtml;
-                } else {
-                    leftUrlHtml = currentUrlHtml;
-                    rightUrlHtml = compareUrlHtml;
-                }
+            //左にはいつでも本番環境を、右にはいつでも開発環境を入れる
+            //別タブとの比較の場合は、左が現在、右が別タブ
+            if (compareDataJson.currentEnvFlg == "production") {
+                leftUrlHtml = currentUrlHtml;
+                rightUrlHtml = compareUrlHtml;
+            } else if (compareDataJson.currentEnvFlg == "development") {
+                leftUrlHtml = compareUrlHtml;
+                rightUrlHtml = currentUrlHtml;
+            } else {
+                leftUrlHtml = currentUrlHtml;
+                rightUrlHtml = compareUrlHtml;
+            }
 
-                //Pretty print the HTML before comparison
-                leftUrlHtml = prettyPrintHtml(leftUrlHtml);
-                rightUrlHtml = prettyPrintHtml(rightUrlHtml);
+            //Pretty print the HTML before comparison
+            leftUrlHtml = prettyPrintHtml(leftUrlHtml);
+            rightUrlHtml = prettyPrintHtml(rightUrlHtml);
+
+            //Filter lines if filterString is present
+            if (configJson.filterString && configJson.filterString.trim() !== "") {
+                leftUrlHtml = filterLinesByString(leftUrlHtml, configJson.filterString);
+                rightUrlHtml = filterLinesByString(rightUrlHtml, configJson.filterString);
+            }
 
                 //windowサイズを取得する
                 //console.log($(window).width());
@@ -437,6 +443,28 @@ function prettyPrintHtml(html) {
     formatted = formatted.replace(/\n\s*\n\s*\n/g, '\n\n');
     
     return formatted.trim();
+}
+
+
+function filterLinesByString(html, filterString) {
+    if (!html || typeof html !== 'string') {
+        return html;
+    }
+    
+    if (!filterString || filterString.trim() === '') {
+        return html;
+    }
+    
+    // Split HTML into lines
+    var lines = html.split('\n');
+    
+    // Filter lines that contain the filterString
+    var filteredLines = lines.filter(function(line) {
+        return line.indexOf(filterString) !== -1;
+    });
+    
+    // Join the filtered lines back together
+    return filteredLines.join('\n');
 }
 
 
