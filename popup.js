@@ -34,7 +34,8 @@ window.onload = function() {
 
             function(callback) {
                 //開いているタブの一覧を取得
-                chrome.tabs.query({}, function(tabs) {
+                // only get the tabs in the current window
+                chrome.tabs.query({currentWindow: true}, function(tabs) {
 
                     //現在のurlと文字列の重なりの量を見る。
                     for (var i = 0; i < tabs.length; i++) {
@@ -110,7 +111,7 @@ window.onload = function() {
                 callback();
             },
 
-            
+
             function(callback) {
                 //おすすめの拡張機能を紹介するhtmlを作る
                 var promoDiv = '<div class="promoDiv">';
@@ -140,7 +141,7 @@ window.onload = function() {
                     callback();
                 });
             }
-            
+
 
         ],
         function(err, results) {
